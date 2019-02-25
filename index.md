@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Freaktastics
 subtitle: And we'll call ourselves.. The Freaktastic Team!!!
 use-site-title: true
