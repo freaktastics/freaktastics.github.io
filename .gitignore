@@ -1,0 +1,6 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+index.html.ORI
+posts2.html

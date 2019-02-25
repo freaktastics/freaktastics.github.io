@@ -1,0 +1,22 @@
+# Dockerfile
+FROM jekyll/jekyll
+RUN gem install bundler
+WORKDIR /srv/jekyll
+COPY Gemfile .
+RUN bundle install
+EXPOSE 4000
+CMD [ "/usr/gem/bin/bundle", "exec", "/usr/local/bundle/bin/jekyll", "serve", "--port", "4000", "--host", "0.0.0.0" ]
+STOPSIGNAL 2
+
+# Build image
+docker build -t beautiful-jekyll $PWD
+Start container for the first time. [3]
+docker run -d -p 4000:4000 --name beautiful-jekyll -v $PWD:/srv/jekyll beautiful-jekyll
+later...
+
+# Stop the server
+docker stop beautiful-jekyll
+later...
+
+# Start the container again
+docker start beautiful-jekyll
